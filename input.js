@@ -1,28 +1,16 @@
+const { CONSTANTS } = require('./constants')
 let connection;
+
 
 const handleUserInput = function (key) {
   // your code here
   if (key === '\u0003') {
     process.exit();
   }
-  if (key === 'w') {
-    connection.write("Move: up");
+  if (CONSTANTS[key]) {
+    connection.write(CONSTANTS[key]);
   }
-  if (key === 'a') {
-    connection.write("Move: left");
-  }
-  if (key === 's') {
-    connection.write("Move: down");
-  }
-  if (key === 'd') {
-    connection.write("Move: right");
-  }
-  if (key === '1') {
-    connection.write("Say: What's up");
-  }
-  if (key === '2') {
-    connection.write("Say: Good bye");
-  }
+ 
 };
 
 
